@@ -1,0 +1,18 @@
+#   DESC : learn common makefile
+# AUTHOR : peacewang
+#   DATE : 2017-02-24
+
+include $(PEACE_BASE_PATH)/makefile.base.comm
+
+#learn工作目录
+LEARN_BASE_PATH = $(PEACE_BASE_PATH)/learn
+
+#learn公共头文件
+INC_LEARN_PATH = $(LEARN_BASE_PATH)/include/
+
+#learn公共库
+ifeq ($(MACHTYPE), x86_64-suse-linux)
+LIB_LEARN_PATH = $(LEARN_BASE_PATH)/lib4suse/
+else
+LIB_LEARN_PATH = $(LEARN_BASE_PATH)/lib4tlinux/
+endif

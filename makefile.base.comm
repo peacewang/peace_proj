@@ -1,0 +1,24 @@
+#   DESC : base common makefile
+# AUTHOR : peacewang
+#   DATE : 2017-02-24
+
+#编译变量
+CC = gcc
+CXX = g++
+AR = ar
+
+#64位编译FLAG
+CFLAGS = -g -O -Wall -fPIC -DMACROFOR64BIT  
+C_FLAGS = -g -O -Wall -fPIC -DMACROFOR64BIT 
+CPPFLAGS = -g -O -Wall -fPIC -DMACROFOR64BIT 
+CPPFLAGS_O0 = -g -O0 -Wall -fPIC -DMACROFOR64BIT 
+
+#公共头文件
+INC_BASE_PATH = $(PEACE_BASE_PATH)/include
+
+#公共库
+ifeq ($(MACHTYPE), x86_64-suse-linux)
+LIB_PEACE_PATH = $(PEACE_BASE_PATH)/lib4suse
+else
+LIB_PEACE_PATH = $(PEACE_BASE_PATH)/lib4tlinux
+endif
